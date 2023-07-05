@@ -10,9 +10,14 @@ First, install the plugin with composer.
 composer require awcodes/filament-gravatar
 ```
 
-Next, update your Filament config file to use the new avatar provider.
+Next, add the `GravatarProvider` to your panel.
+
 ```php
-'default_avatar_provider' => \FilamentGravatar\UiAvatarsProvider::class,
+public function panel(Panel $panel): Panel
+{
+    return $panel
+        ->defaultAvatarProvider(GravatarProvider::class)
+}
 ```
 
 ## Global Defaults
@@ -23,6 +28,14 @@ You can modify the global defaults, should you need to by publishing the config 
 php artisan vendor:publish --tag="filament-gravatar-config"
 ```
 
+```php
+return [
+    'size' => 80, // 1 - 2048
+    'default' => 'mp', // 404 | mp | identicon | monsterid | wavatar | robohash
+    'rating' => 'g', // g | pg | r | x
+];
+```
+
 ## Additional Info
 
 You can also use the `FilamentGravatar\Gravatar` class by itself should you need to outside of Filament.
@@ -30,10 +43,10 @@ You can also use the `FilamentGravatar\Gravatar` class by itself should you need
 ```php
 FilamentGravatar\Gravatar::get(
     string $email = null,
-    int $s = 80,
-    string $d = 'mp',
-    string $r = 'g',
-    bool $img = false,
-    $atts = []
+    int $size = 80,
+    string $default = 'mp',
+    string $rating = 'g',
+    bool $asImage = false,
+    array $attributes = []
 );
 ```
