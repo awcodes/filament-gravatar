@@ -26,9 +26,9 @@ class Gravatar
         array $attributes = []
     ): string {
 
-        $size = config('filament-gravatar.size', $size);
-        $default = config('filament-gravatar.default', $default);
-        $rating = config('filament-gravatar.rating', $rating);
+        $size = GravatarPlugin::get()->getSize() ?? $size;
+        $default = GravatarPlugin::get()->getDefault() ?? $default;
+        $rating = GravatarPlugin::get()->getRating() ?? $rating;
 
         $url = 'https://www.gravatar.com/avatar/';
         $url .= md5(strtolower(trim($email)));

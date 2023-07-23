@@ -13,35 +13,41 @@ composer require awcodes/filament-gravatar
 Next, add the `GravatarProvider` to your panel.
 
 ```php
+use Awcodes\FilamentGravatar\GravatarProvider;
+
 public function panel(Panel $panel): Panel
 {
     return $panel
         ->defaultAvatarProvider(GravatarProvider::class)
+        ->plugins([
+            GravatarPlugin::make(),
+        ])
 }
 ```
 
 ## Global Defaults
 
-You can modify the global defaults, should you need to by publishing the config file.
-
-```bash
-php artisan vendor:publish --tag="filament-gravatar-config"
-```
+You can modify the global defaults by using the following methods on the `GravatarPlugin`.
 
 ```php
-return [
-    'size' => 80, // 1 - 2048
-    'default' => 'mp', // 404 | mp | identicon | monsterid | wavatar | robohash
-    'rating' => 'g', // g | pg | r | x
-];
+public function panel(Panel $panel): Panel
+{
+    return $panel
+        ->plugins([
+            GravatarPlugin::make()
+                ->default('robohash')
+                ->size(200)
+                ->rating('pg'),
+        ])
+}
 ```
 
 ## Additional Info
 
-You can also use the `FilamentGravatar\Gravatar` class by itself should you need to outside of Filament.
+You can also use the `Awcodes\FilamentGravatar\Gravatar` class by itself should you need to outside a panel.
 
 ```php
-FilamentGravatar\Gravatar::get(
+Awcodes\FilamentGravatar\Gravatar::get(
     string $email = null,
     int $size = 80,
     string $default = 'mp',

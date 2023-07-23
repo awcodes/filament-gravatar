@@ -18,7 +18,7 @@
     ],
     "require": {
         "php": "^8.1",
-        "filament/filament": "^3.0",
+        "filament/filament": "^3.0@beta",
         "spatie/laravel-package-tools": "^1.15"
     },
     "require-dev": {
@@ -32,7 +32,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Awcodes\\FilamentGravatar\\FilamentGravatarServiceProvider"
+                "Awcodes\\FilamentGravatar\\GravatarServiceProvider"
             ]
         }
     },
