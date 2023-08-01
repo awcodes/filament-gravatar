@@ -2,6 +2,8 @@
 
 Replace Filament's default avatar url provider with one for Gravatar.
 
+![gravatar-og](https://res.cloudinary.com/aw-codes/image/upload/w_1200,f_auto,q_auto/plugins/gravatar/awcodes-gravatar.jpg)
+
 ## Installation
 
 First, install the plugin with composer.
