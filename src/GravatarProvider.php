@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class GravatarProvider implements AvatarProvider
 {
-    public function get(Model|Authenticatable $record): string
+    public function get(Model | Authenticatable $record): string
     {
         return Gravatar::get(email: $record->email);
     }
