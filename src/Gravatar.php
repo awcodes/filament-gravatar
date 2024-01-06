@@ -18,7 +18,7 @@ class Gravatar
      * @source https://gravatar.com/site/implement/images/php/
      */
     public static function get(
-        string $email = null,
+        ?string $email = null,
         int $size = 80,
         string $default = 'mp',
         string $rating = 'g',
@@ -30,8 +30,10 @@ class Gravatar
         $default = GravatarPlugin::get()->getDefault() ?? $default;
         $rating = GravatarPlugin::get()->getRating() ?? $rating;
 
-        $url = 'https://www.gravatar.com/avatar/';
-        $url .= md5(strtolower(trim($email)));
+        $url = 'https://www.gravatar.com/avatar';
+        if ($email) {
+            $url .= '/' . md5(strtolower(trim($email)));
+        }
         $url .= "?s=$size&d=$default&r=$rating";
         if ($asImage) {
             $url = '<img src="' . $url . '"';
