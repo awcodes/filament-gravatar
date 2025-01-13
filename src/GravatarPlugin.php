@@ -49,7 +49,7 @@ class GravatarPlugin implements Plugin
      */
     public function default(string $default): static
     {
-        if (! in_array($default, ['404', 'mp', 'identicon', 'monsterid', 'wavatar', 'robohash'])) {
+        if (! in_array($default, ['404', 'mp', 'identicon', 'monsterid', 'wavatar', 'retro', 'robohash', 'blank'])) {
             throw new Exception('Invalid default');
         }
 
