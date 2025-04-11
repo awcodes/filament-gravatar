@@ -32,7 +32,7 @@ class GravatarPlugin implements Plugin
         return app(static::class);
     }
 
-    public static function get(): static
+    public static function get(): Plugin
     {
         return filament(app(static::class)->getId());
     }
@@ -44,12 +44,10 @@ class GravatarPlugin implements Plugin
         return $this;
     }
 
-    /**
-     * @throws Exception
-     */
+    /** @throws Exception */
     public function default(string $default): static
     {
-        if (! in_array($default, ['404', 'mp', 'identicon', 'monsterid', 'wavatar', 'retro', 'robohash', 'blank'])) {
+        if (! in_array($default, ['initials', 'color', '404', 'mp', 'identicon', 'monsterid', 'wavatar', 'retro', 'robohash', 'blank'])) {
             throw new Exception('Invalid default');
         }
 
@@ -58,9 +56,7 @@ class GravatarPlugin implements Plugin
         return $this;
     }
 
-    /**
-     * @throws Exception
-     */
+    /** @throws Exception */
     public function rating(string $rating): static
     {
         if (! in_array($rating, ['g', 'pg', 'r', 'x'])) {
