@@ -1,6 +1,8 @@
 <?php
 
-namespace Awcodes\FilamentGravatar;
+declare(strict_types=1);
+
+namespace Awcodes\Gravatar;
 
 class Gravatar
 {
@@ -25,13 +27,8 @@ class Gravatar
         bool $asImage = false,
         array $attributes = []
     ): string {
-
-        $size = GravatarPlugin::get()->getSize() ?? $size;
-        $default = GravatarPlugin::get()->getDefault() ?? $default;
-        $rating = GravatarPlugin::get()->getRating() ?? $rating;
-
         $url = 'https://www.gravatar.com/avatar';
-        if ($email) {
+        if ($email !== null && $email !== '' && $email !== '0') {
             $url .= '/'.md5(mb_strtolower(trim($email)));
         }
         $url .= "?s=$size&d=$default&r=$rating";

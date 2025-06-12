@@ -1,7 +1,11 @@
 <?php
 
-namespace Awcodes\FilamentGravatar;
+declare(strict_types=1);
 
+namespace Awcodes\Gravatar;
+
+use Awcodes\Gravatar\Enums\Defaults;
+use Awcodes\Gravatar\Enums\Rating;
 use Exception;
 use Filament\Contracts\Plugin;
 use Filament\Panel;
@@ -14,19 +18,6 @@ class GravatarPlugin implements Plugin
 
     protected ?string $rating = null;
 
-    public function getId(): string
-    {
-        return 'awcodes/gravatar';
-    }
-
-    public function register(Panel $panel): void
-    {
-    }
-
-    public function boot(Panel $panel): void
-    {
-    }
-
     public static function make(): static
     {
         return app(static::class);
@@ -37,33 +28,55 @@ class GravatarPlugin implements Plugin
         return filament(app(static::class)->getId());
     }
 
+    public function getId(): string
+    {
+        return 'awcodes/gravatar';
+    }
+
+    public function register(Panel $panel): void {}
+
+    public function boot(Panel $panel): void {}
+
+    /** @throws Exception */
     public function size(int $size): static
     {
+        if ($size < 1 || $size > 2048) {
+            throw new Exception('Gravatar Size must be between 1 and 2048 pixels');
+        }
+
         $this->size = $size;
 
         return $this;
     }
 
     /** @throws Exception */
-    public function default(string $default): static
+    public function default(string|Defaults $default): static
     {
-        if (! in_array($default, ['initials', 'color', '404', 'mp', 'identicon', 'monsterid', 'wavatar', 'retro', 'robohash', 'blank'])) {
-            throw new Exception('Invalid default');
+        if (is_string($default)) {
+            $default = Defaults::tryFrom($default) ?? null;
         }
 
-        $this->default = $default;
+        if (! $default) {
+            throw new Exception('Invalid Gravatar default');
+        }
+
+        $this->default = $default->value;
 
         return $this;
     }
 
     /** @throws Exception */
-    public function rating(string $rating): static
+    public function rating(string|Rating $rating): static
     {
-        if (! in_array($rating, ['g', 'pg', 'r', 'x'])) {
-            throw new Exception('Invalid rating');
+        if (is_string($rating)) {
+            $rating = Rating::tryFrom($rating) ?? null;
         }
 
-        $this->rating = $rating;
+        if (! $rating) {
+            throw new Exception('Invalid Gravatar rating');
+        }
+
+        $this->rating = $rating->value;
 
         return $this;
     }
