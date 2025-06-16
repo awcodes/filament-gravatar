@@ -33,7 +33,11 @@
     },
     "autoload": {
         "psr-4": {
-            "Awcodes\\Gravatar\\": "src/",
+            "Awcodes\\Gravatar\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
             "Awcodes\\Gravatar\\Tests\\": "tests/src",
             "Awcodes\\Gravatar\\Tests\\Database\\Factories\\": "tests/database/factories"
         }
