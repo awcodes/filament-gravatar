@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 use Awcodes\Gravatar\Gravatar;
 
 it('can generate a gravatar URL', function () {
