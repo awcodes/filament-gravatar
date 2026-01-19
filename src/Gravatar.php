@@ -28,7 +28,7 @@ class Gravatar
         array $attributes = []
     ): string {
         $url = 'https://www.gravatar.com/avatar';
-        if ($email !== null && $email !== '' && $email !== '0') {
+        if (! in_array($email, [null, '', '0'], true)) {
             $url .= '/'.md5(mb_strtolower(trim($email)));
         }
         $url .= "?s=$size&d=$default&r=$rating";
