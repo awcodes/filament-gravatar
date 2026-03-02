@@ -1,10 +1,11 @@
-![gravatar-og](https://res.cloudinary.com/aw-codes/image/upload/w_1200,f_auto,q_auto/plugins/gravatar/awcodes-gravatar.jpg)
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/awcodes/filament-gravatar.svg?style=flat-square)](https://packagist.org/packages/awcodes/filament-gravatar)
-[![Total Downloads](https://img.shields.io/packagist/dt/awcodes/filament-badgeable-column.svg?style=flat-square)](https://packagist.org/packages/awcodes/filament-gravatar)
-
 # Filament Gravatar
 
 Replace Filament's default avatar url provider with one for Gravatar.
+
+[![Latest Version](https://img.shields.io/github/release/awcodes/filament-gravatar.svg?style=flat-square)](https://github.com/awcodes/filament-gravatar/releases)
+[![MIT Licensed](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
+[![Total Downloads](https://img.shields.io/packagist/dt/awcodes/filament-gravatar.svg?style=flat-square)](https://packagist.org/packages/awcodes/filament-gravatar)
+![GitHub Repo stars](https://img.shields.io/github/stars/awcodes/filament-gravatar?style=flat-square)
 
 ## Compatibility
 
