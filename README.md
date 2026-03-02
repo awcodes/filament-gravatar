@@ -2,10 +2,10 @@
 
 Replace Filament's default avatar url provider with one for Gravatar.
 
-[![Latest Version](https://img.shields.io/github/release/awcodes/filament-gravatar.svg?style=flat-square)](https://github.com/awcodes/filament-gravatar/releases)
-[![MIT Licensed](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
-[![Total Downloads](https://img.shields.io/packagist/dt/awcodes/filament-gravatar.svg?style=flat-square)](https://packagist.org/packages/awcodes/filament-gravatar)
-![GitHub Repo stars](https://img.shields.io/github/stars/awcodes/filament-gravatar?style=flat-square)
+[![Latest Version](https://img.shields.io/github/release/awcodes/filament-gravatar.svg?style=flat-square&color=blue&label=Release)](https://github.com/awcodes/filament-gravatar/releases)
+[![MIT Licensed](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](LICENSE.md)
+[![Total Downloads](https://img.shields.io/packagist/dt/awcodes/filament-gravatar.svg?style=flat-square&color=blue&label=Downloads)](https://packagist.org/packages/awcodes/filament-gravatar)
+[![GitHub Repo stars](https://img.shields.io/github/stars/awcodes/filament-gravatar?style=flat-square&color=blue&label=Stars)](https://github.com/awcodes/filament-gravatar/stargazers)
 
 ## Compatibility
 
