@@ -16,6 +16,8 @@ Replace Filament's default avatar url provider with one for Gravatar.
 | 3.x             | 4.x              |
 | 4.x             | 5.x              |
 
+<!-- [docs_start] -->
+
 ## Installation
 
 First, install the plugin with composer.
@@ -73,6 +75,8 @@ Awcodes\Gravatar\Gravatar::get(
     array $attributes = []
 );
 ```
+
+<!-- [docs_end] -->
 
 ## Contributing
 
