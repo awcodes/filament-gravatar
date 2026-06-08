@@ -12,8 +12,10 @@ class GravatarProvider implements AvatarProvider
 {
     public function get(Model|Authenticatable $record): string
     {
+        $email = data_get($record, 'email');
+
         return Gravatar::get(
-            email: $record->email,
+            email: is_string($email) ? $email : null,
             size: GravatarPlugin::get()->getSize(),
             default: GravatarPlugin::get()->getDefault(),
             rating: GravatarPlugin::get()->getRating(),
