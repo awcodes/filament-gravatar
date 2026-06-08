@@ -7,7 +7,7 @@ on:
       - opened
       - synchronize
     branches:
-      - 3.x
+      - 4.x
     paths:
       - '**.php'
       - '.github/workflows/phpstan.yml'
