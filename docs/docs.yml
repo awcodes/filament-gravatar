@@ -1,0 +1,9 @@
+version: 1
+
+title: Filament Gravatar
+
+navigation:
+  - index
+  - installation
+  - configuration
+  - usage
