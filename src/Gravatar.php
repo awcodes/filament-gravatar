@@ -4,8 +4,17 @@ declare(strict_types=1);
 
 namespace Awcodes\Gravatar;
 
+use Awcodes\Gravatar\Enums\Defaults;
+use Awcodes\Gravatar\Enums\Rating;
+
 class Gravatar
 {
+    public const DEFAULT_SIZE = 80;
+
+    public const MIN_SIZE = 1;
+
+    public const MAX_SIZE = 2048;
+
     /**
      * Get either a Gravatar URL or complete image tag for a specified email address.
      *
@@ -21,9 +30,9 @@ class Gravatar
      */
     public static function get(
         ?string $email = null,
-        int $size = 80,
-        string $default = 'mp',
-        string $rating = 'g',
+        int $size = self::DEFAULT_SIZE,
+        string $default = Defaults::Mp->value,
+        string $rating = Rating::G->value,
         bool $asImage = false,
         array $attributes = []
     ): string {

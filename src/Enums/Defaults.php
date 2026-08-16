@@ -9,6 +9,7 @@ enum Defaults: string
     case Initials = 'initials';
     case Color = 'color';
     case FourOhFour = '404';
+    case Mp = 'mp';
     case Identicon = 'identicon';
     case Monsterid = 'monsterid';
     case Wavatar = 'wavatar';

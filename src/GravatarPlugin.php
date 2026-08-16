@@ -43,8 +43,10 @@ class GravatarPlugin implements Plugin
     /** @throws Exception */
     public function size(int $size): static
     {
-        if ($size < 1 || $size > 2048) {
-            throw new Exception('Gravatar Size must be between 1 and 2048 pixels');
+        if ($size < Gravatar::MIN_SIZE || $size > Gravatar::MAX_SIZE) {
+            throw new Exception(
+                sprintf('Gravatar Size must be between %d and %d pixels', Gravatar::MIN_SIZE, Gravatar::MAX_SIZE)
+            );
         }
 
         $this->size = $size;
@@ -86,16 +88,16 @@ class GravatarPlugin implements Plugin
 
     public function getSize(): int
     {
-        return $this->size ?? 80;
+        return $this->size ?? Gravatar::DEFAULT_SIZE;
     }
 
     public function getDefault(): string
     {
-        return $this->default ?? 'mp';
+        return $this->default ?? Defaults::Mp->value;
     }
 
     public function getRating(): string
     {
-        return $this->rating ?? 'g';
+        return $this->rating ?? Rating::G->value;
     }
 }

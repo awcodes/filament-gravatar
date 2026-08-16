@@ -56,6 +56,7 @@ Accepted values are the cases of `Awcodes\Gravatar\Enums\Defaults`:
 | --- | --- |
 | `initials` | The user's initials |
 | `color` | A flat generated color |
+| `mp` | Gravatar's "mystery person" silhouette |
 | `identicon` | A geometric pattern derived from the hash |
 | `monsterid` | A generated monster face |
 | `wavatar` | A generated face |
@@ -68,8 +69,7 @@ Passing a string works too, and is checked against the same enum:
 GravatarPlugin::make()->default('robohash')
 ```
 
-> [!NOTE]
-> The effective fallback when you do not call `default()` is `mp` (Gravatar's "mystery person" silhouette), but `mp` is not one of the enum cases — passing it explicitly throws `Invalid Gravatar default`. To keep the mystery person, simply omit the call.
+`mp` is the value used when you do not call `default()` at all, so setting it explicitly is equivalent to omitting the call.
 
 Choosing `404` is useful when you want to detect the absence of a Gravatar in your own code rather than show a generated image.
 
