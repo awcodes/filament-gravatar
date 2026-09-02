@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 use Awcodes\Gravatar\GravatarPlugin;
 use Awcodes\Gravatar\GravatarProvider;
-use Awcodes\Gravatar\Tests\Fixtures\Models\User;
 use Filament\Facades\Filament;
+use Workbench\App\Models\User;
 
 beforeEach(function () {
     $this->panel = Filament::getCurrentOrDefaultPanel();

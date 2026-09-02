@@ -2,9 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Awcodes\Gravatar\Tests\Fixtures\Providers;
+namespace Workbench\App\Providers\Filament;
 
-use Exception;
+use Awcodes\Gravatar\Enums\Defaults;
+use Awcodes\Gravatar\Enums\Rating;
+use Awcodes\Gravatar\GravatarPlugin;
+use Awcodes\Gravatar\GravatarProvider;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
@@ -18,18 +21,24 @@ use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
 use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
+use Workbench\App\Filament\Pages\Auth\Login;
 
 class AdminPanelProvider extends PanelProvider
 {
-    /** @throws Exception */
     public function panel(Panel $panel): Panel
     {
         return $panel
             ->default()
             ->id('admin')
-            ->path('/admin')
-            ->login()
-            ->resources([])
+            ->path('admin')
+            ->login(Login::class)
+            ->defaultAvatarProvider(GravatarProvider::class)
+            ->plugins([
+                GravatarPlugin::make()
+                    ->default(Defaults::Robohash)
+                    ->size(200)
+                    ->rating(Rating::PG),
+            ])
             ->pages([
                 Pages\Dashboard::class,
             ])

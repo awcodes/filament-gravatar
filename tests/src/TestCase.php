@@ -5,8 +5,6 @@ declare(strict_types=1);
 namespace Awcodes\Gravatar\Tests;
 
 use Awcodes\Gravatar\GravatarServiceProvider;
-use Awcodes\Gravatar\Tests\Fixtures\Models\User;
-use Awcodes\Gravatar\Tests\Fixtures\Providers\AdminPanelProvider;
 use BladeUI\Heroicons\BladeHeroiconsServiceProvider;
 use BladeUI\Icons\BladeIconsServiceProvider;
 use Filament\Actions\ActionsServiceProvider;
@@ -23,6 +21,8 @@ use Livewire\LivewireServiceProvider;
 use Orchestra\Testbench\Concerns\WithWorkbench;
 use Orchestra\Testbench\TestCase as Orchestra;
 use RyanChandler\BladeCaptureDirective\BladeCaptureDirectiveServiceProvider;
+use Workbench\App\Models\User;
+use Workbench\App\Providers\Filament\AdminPanelProvider;
 
 abstract class TestCase extends Orchestra
 {

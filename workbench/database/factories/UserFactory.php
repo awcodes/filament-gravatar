@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Awcodes\Gravatar\Tests\Database\Factories;
+namespace Workbench\Database\Factories;
 
-use Awcodes\Gravatar\Tests\Fixtures\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
+use Workbench\App\Models\User;
 
 class UserFactory extends Factory
 {
