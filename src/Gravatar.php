@@ -38,13 +38,13 @@ class Gravatar
     ): string {
         $url = 'https://www.gravatar.com/avatar';
         if (! in_array($email, [null, '', '0'], true)) {
-            $url .= '/'.md5(mb_strtolower(trim($email)));
+            $url .= '/' . md5(mb_strtolower(trim($email)));
         }
         $url .= "?s=$size&d=$default&r=$rating";
         if ($asImage) {
-            $url = '<img src="'.$url.'"';
+            $url = '<img src="' . $url . '"';
             foreach ($attributes as $key => $val) {
-                $url .= ' '.$key.'="'.$val.'"';
+                $url .= ' ' . $key . '="' . $val . '"';
             }
             $url .= ' />';
         }
