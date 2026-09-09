@@ -55,7 +55,7 @@ class GravatarPlugin implements Plugin
     }
 
     /** @throws Exception */
-    public function default(string|Defaults $default): static
+    public function default(string | Defaults $default): static
     {
         if (is_string($default)) {
             $default = Defaults::tryFrom($default) ?? null;
@@ -71,7 +71,7 @@ class GravatarPlugin implements Plugin
     }
 
     /** @throws Exception */
-    public function rating(string|Rating $rating): static
+    public function rating(string | Rating $rating): static
     {
         if (is_string($rating)) {
             $rating = Rating::tryFrom($rating) ?? null;
