@@ -1,4 +1,4 @@
-# Filament Gravatar
+# Gravatar
 
 Replace Filament's default avatar url provider with one for Gravatar.
 

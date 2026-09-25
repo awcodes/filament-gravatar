@@ -1,11 +1,11 @@
 ---
-title: Filament Gravatar
+title: Gravatar
 description: Replace a Filament panel's default avatar provider with one backed by Gravatar.
 ---
 
-# Filament Gravatar
+# Gravatar
 
-Filament Gravatar swaps a panel's default avatar provider for one that serves avatars from [Gravatar](https://gravatar.com), based on each user's email address.
+Gravatar swaps a panel's default avatar provider for one that serves avatars from [Gravatar](https://gravatar.com), based on each user's email address.
 
 Filament's built-in provider generates avatars from a user's initials. This package instead looks up the address in Gravatar, so users who already have a Gravatar profile see their own picture, and everyone else falls back to a generated image of your choosing.
 
