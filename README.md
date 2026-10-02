@@ -1,82 +1,37 @@
 # Gravatar
 
-Replace Filament's default avatar url provider with one for Gravatar.
+Replace a Filament panel's default avatar provider with one backed by Gravatar, or build Gravatar URLs anywhere in your Laravel app.
 
 [![Latest Version](https://img.shields.io/github/release/awcodes/filament-gravatar.svg?style=flat-square&color=blue&label=Release)](https://github.com/awcodes/filament-gravatar/releases)
 [![MIT Licensed](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](LICENSE.md)
 [![Total Downloads](https://img.shields.io/packagist/dt/awcodes/filament-gravatar.svg?style=flat-square&color=blue&label=Downloads)](https://packagist.org/packages/awcodes/filament-gravatar)
 [![GitHub Repo stars](https://img.shields.io/github/stars/awcodes/filament-gravatar?style=flat-square&color=blue&label=Stars)](https://github.com/awcodes/filament-gravatar/stargazers)
+[![Filament Version](https://img.shields.io/badge/Filament-4.x%20%26%205.x-d97706.svg?style=flat-square)](https://filamentphp.com/docs/5.x/introduction/installation)
+
+## Documentation
+
+The full documentation lives at **[docs.aw.codes/gravatar](https://docs.aw.codes/gravatar/4.x)**.
 
 ## Compatibility
 
-| Package Version | Filament Version |
-|-----------------|------------------|
-| 1.x             | 2.x              |
-| 2.x             | 3.x              |
-| 3.x             | 4.x              |
-| 4.x             | 4.x & 5.x        |
-
-<!-- [docs_start] -->
+| Filament version | Package version |
+|------------------|-----------------|
+| 2.x              | 1.x             |
+| 3.x              | 2.x             |
+| 4.x              | 3.x             |
+| 4.x & 5.x        | 4.x             |
 
 ## Installation
-
-First, install the plugin with composer.
 
 ```bash
 composer require awcodes/filament-gravatar
 ```
 
-Next, add the `GravatarProvider` to your panel.
+Then register both the `GravatarProvider` and the `GravatarPlugin` on your panel. See [Installation](https://docs.aw.codes/gravatar/4.x/installation) for that step.
 
-```php
-use Awcodes\Gravatar\GravatarProvider;
-use Awcodes\Gravatar\GravatarPlugin;
+## Changelog
 
-public function panel(Panel $panel): Panel
-{
-    return $panel
-        ->defaultAvatarProvider(GravatarProvider::class)
-        ->plugins([
-            GravatarPlugin::make(),
-        ])
-}
-```
-
-## Global Defaults
-
-You can modify the global defaults by using the following methods on the `GravatarPlugin`.
-
-```php
-use Awcodes\Gravatar\GravatarPlugin;
-
-public function panel(Panel $panel): Panel
-{
-    return $panel
-        ->plugins([
-            GravatarPlugin::make()
-                ->default('robohash')
-                ->size(200)
-                ->rating('pg'),
-        ])
-}
-```
-
-## Additional Info
-
-You can also use the `Awcodes\Gravatar\Gravatar` class by itself should you need to outside a panel.
-
-```php
-Awcodes\Gravatar\Gravatar::get(
-    string $email = null,
-    int $size = 80,
-    string $default = 'mp',
-    string $rating = 'g',
-    bool $asImage = false,
-    array $attributes = []
-);
-```
-
-<!-- [docs_end] -->
+Please see the [releases](https://github.com/awcodes/filament-gravatar/releases) for what has changed recently.
 
 ## Contributing
 
