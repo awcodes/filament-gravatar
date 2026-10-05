@@ -69,6 +69,11 @@ Passing a string works too, and is checked against the same enum:
 GravatarPlugin::make()->default('robohash')
 ```
 
+With `robohash` as the default, users who have a Gravatar keep their own picture and everyone else gets a generated robot:
+
+![A Filament users table whose avatar column shows Gravatar images: Test User and Amara Okafor have pictures of their own, and the three users without a Gravatar show generated robohash robots](assets/users-table-light.png#gh-light-mode-only)
+![A Filament users table whose avatar column shows Gravatar images: Test User and Amara Okafor have pictures of their own, and the three users without a Gravatar show generated robohash robots](assets/users-table-dark.png#gh-dark-mode-only)
+
 `mp` is the value used when you do not call `default()` at all, so setting it explicitly is equivalent to omitting the call.
 
 Choosing `404` is useful when you want to detect the absence of a Gravatar in your own code rather than show a generated image.

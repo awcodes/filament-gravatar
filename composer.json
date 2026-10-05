@@ -1,7 +1,7 @@
 {
     "name": "awcodes/filament-gravatar",
     "type": "package",
-    "description": "Replace Filament's default avatar url provider with one for Gravatar.",
+    "description": "Replace a Filament panel's default avatar provider with one backed by Gravatar.",
     "keywords": [
         "awcodes",
         "laravel",
@@ -23,6 +23,7 @@
         "spatie/laravel-package-tools": "^1.15"
     },
     "require-dev": {
+        "awcodes/focus": "^0.3|^1.0",
         "larastan/larastan": "^3.0",
         "laravel/pint": "^1.0",
         "nunomaduro/collision": "^8.0",
@@ -78,6 +79,10 @@
             "Composer\\Config::disableProcessTimeout",
             "@build",
             "@php vendor/bin/testbench serve --ansi"
+        ],
+        "focus": [
+            "Composer\\Config::disableProcessTimeout",
+            "focus"
         ]
     },
     "config": {

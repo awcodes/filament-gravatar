@@ -9,6 +9,9 @@ Gravatar swaps a panel's default avatar provider for one that serves avatars fro
 
 Filament's built-in provider generates avatars from a user's initials. This package instead looks up the address in Gravatar, so users who already have a Gravatar profile see their own picture, and everyone else falls back to a generated image of your choosing.
 
+![A Filament users table whose avatar column shows Gravatar images: Test User and Amara Okafor have pictures of their own, and the three users without a Gravatar show generated robohash robots](assets/users-table-light.png#gh-light-mode-only)
+![A Filament users table whose avatar column shows Gravatar images: Test User and Amara Okafor have pictures of their own, and the three users without a Gravatar show generated robohash robots](assets/users-table-dark.png#gh-dark-mode-only)
+
 ## How it works
 
 The provider reads the `email` attribute from the authenticated record, hashes it, and builds a Gravatar URL from it. No API calls are made from your application — the avatar is an image URL that the browser requests directly.
