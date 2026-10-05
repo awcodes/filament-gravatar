@@ -31,7 +31,8 @@ $gravatar = function (string $url): string {
 };
 
 // The awcodes card templates frame each screenshot at 1400x816. The users page is captured in that shape at
-// 1225x714, the smallest size that fits the whole table, and the template scales it up.
+// 1225x714, the smallest size that fits the whole table, and the template scales it up. The two-up cards show it
+// twice: the light capture large at the back, and the dark one in front of its lower-left part.
 $card = [1225, 714];
 
 return ScreenshotSuite::make()
@@ -55,19 +56,19 @@ return ScreenshotSuite::make()
             ->click('button[aria-label="User menu"]')
             ->viewport(),
     ])
-    ->cardTemplates('https://github.com/awcodes/focus-templates/tree/v1.1.1/dist')
+    ->cardTemplates('https://github.com/awcodes/focus-templates/tree/v2.0.0/dist')
     ->cards([
         // Open Graph and the GitHub social preview share one 2400x1260 template; GitHub crops 30px top and bottom.
         Card::make('social')
-            ->template('one-up-wide')
+            ->template('two-up-wide')
             ->title('Gravatar')
-            ->screenshots(['card-users'])
+            ->screenshots(['card-users', 'card-users'])
             ->sizes([Size::OpenGraph, Size::GitHubSocial]),
 
         // The Filament plugin directory's 2560x1440 thumbnail.
         Card::make('thumbnail')
-            ->template('one-up')
+            ->template('two-up')
             ->title('Gravatar')
-            ->screenshots(['card-users'])
+            ->screenshots(['card-users', 'card-users'])
             ->sizes([Size::Filament]),
     ]);
