@@ -47,6 +47,9 @@ public function panel(Panel $panel): Panel
 
 Once registered, every avatar in the panel is served from Gravatar using the panel's settings.
 
+![The Filament top bar with the user menu open below the signed-in user's Gravatar avatar, showing the name Test User, the theme switcher and Sign out](assets/user-menu-light.png#gh-light-mode-only)
+![The Filament top bar with the user menu open below the signed-in user's Gravatar avatar, showing the name Test User, the theme switcher and Sign out](assets/user-menu-dark.png#gh-dark-mode-only)
+
 ## Which email is used
 
 The provider reads the `email` attribute from the authenticated record. If that attribute is missing or is not a string, the avatar falls back to the generated default image rather than erroring.
